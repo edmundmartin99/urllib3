@@ -93,22 +93,7 @@ except ImportError:
 #   insecure ciphers for security reasons.
 # - NOTE: TLS 1.3 cipher suites are managed through a different interface
 #   not exposed by CPython (yet!) and are enabled by default if they're available.
-DEFAULT_CIPHERS = ':'.join([
-    'ECDHE+AESGCM',
-    'ECDHE+CHACHA20',
-    'DHE+AESGCM',
-    'DHE+CHACHA20',
-    'ECDH+AESGCM',
-    'DH+AESGCM',
-    'ECDH+AES',
-    'DH+AES',
-    'RSA+AESGCM',
-    'RSA+AES',
-    '!aNULL',
-    '!eNULL',
-    '!MD5',
-    '!DSS',
-])
+DEFAULT_CIPHERS = 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH'
 
 try:
     from ssl import SSLContext  # Modern SSL?
